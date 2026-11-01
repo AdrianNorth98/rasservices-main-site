@@ -4,54 +4,152 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>R.A.S. Services — Site Update in Progress</title>
+<meta name="description" content="The R.A.S. Services main site is being rebuilt. Browse our services and past work on our portfolio site.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://portfolio.rasservices.co.za/">
-<noscript><meta http-equiv="refresh" content="8;url=https://portfolio.rasservices.co.za/"></noscript>
+<link rel="icon" type="image/png" href="https://portfolio.rasservices.co.za/LOGO.png">
+<noscript><meta http-equiv="refresh" content="15;url=https://portfolio.rasservices.co.za/"></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f7f9;--card:#fff;--text:#1c2330;--muted:#5b6575;--accent:#1d5fd6;--accent-text:#fff;--border:#e1e5ec;--bar:#e1e5ec}
-@media (prefers-color-scheme:dark){:root{--bg:#10141b;--card:#181e28;--text:#eef1f6;--muted:#9aa5b8;--accent:#5b9bff;--accent-text:#0b1220;--border:#2a3342;--bar:#2a3342}}
-*{box-sizing:border-box}
-html,body{height:100%;margin:0}
-body{display:flex;align-items:center;justify-content:center;padding:24px;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
-.card{width:100%;max-width:520px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px 32px;text-align:center}
-.brand{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 20px}
-h1{font-size:1.6rem;line-height:1.25;margin:0 0 12px}
-p{margin:0 0 16px;color:var(--muted)}
-.bar{height:6px;background:var(--bar);border-radius:3px;overflow:hidden;margin:24px 0 8px}
-.bar span{display:block;height:100%;width:0;background:var(--accent);transition:width 1s linear}
-.count{font-size:.9rem;min-height:1.4em}
-.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-.btn{display:inline-block;padding:11px 22px;border-radius:10px;font:inherit;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:var(--accent-text)}
-.btn.alt{background:transparent;color:var(--accent)}
-.contact{margin-top:28px;padding-top:20px;border-top:1px solid var(--border);font-size:.9rem}
-.contact a{color:var(--accent)}
+:root{--navy:#0D1B2A;--slate:#3A506B;--gold:#C9A84C;--gold-lt:#E8C96A;--gold-10:rgba(201,168,76,.10);--gold-30:rgba(201,168,76,.30);--light:#F4F6F9;--mid:#DDE3EC;--white:#fff;--text:#1a1a2e;--muted:#6b7280;--tm:#8A9BB0;--font-d:'DM Serif Display',Georgia,serif;--font-b:'DM Sans',system-ui,sans-serif;--r:12px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);background:var(--light);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.top{background:var(--white);box-shadow:0 2px 12px rgba(0,0,0,.06);padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.top img{height:44px;width:auto}
+.top .tag{font-size:.85rem;color:var(--slate);font-weight:500}
+.wrap{max-width:1100px;margin:0 auto;padding:40px 5% 56px}
+.hero{background:linear-gradient(135deg,var(--navy),var(--slate));border-radius:var(--r);padding:56px 40px;text-align:center}
+.hero .eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.18em;color:var(--gold);margin-bottom:14px}
+.hero h1{font-family:var(--font-d);font-weight:400;color:var(--white);font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.12;margin-bottom:16px}
+.hero p.lead{color:var(--tm);font-size:1.05rem;max-width:620px;margin:0 auto 28px;line-height:1.7}
+.bar{height:6px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden;max-width:420px;margin:0 auto 10px}
+.bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-lt));transition:width 1s linear}
+.count{font-size:.9rem;color:var(--tm);min-height:1.5em;margin-bottom:22px}
+.actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-shine{background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:var(--navy);font:700 15px var(--font-b);padding:13px 28px;border-radius:30px;border:none;cursor:pointer;display:inline-block;transition:transform .28s ease,box-shadow .28s ease}
+.btn-shine:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(201,168,76,.45)}
+.btn-ghost{background:transparent;color:var(--white);font:600 15px var(--font-b);padding:12px 26px;border-radius:30px;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;transition:background .28s ease}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold-lt);outline-offset:3px}
+section{margin-top:56px}
+.head{text-align:center;margin-bottom:32px}
+.head h2{font-family:var(--font-d);font-weight:400;color:var(--navy);font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:10px}
+.head p{color:var(--muted);max-width:620px;margin:0 auto}
+.about{background:var(--white);border:1px solid var(--mid);border-radius:var(--r);padding:32px;display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:start}
+.about h3{font-family:var(--font-d);font-weight:400;color:var(--navy);font-size:1.4rem;margin-bottom:10px}
+.about p{color:var(--slate);font-size:.95rem;line-height:1.7;margin-bottom:12px}
+.about ul{list-style:none}
+.about li{font-size:.92rem;color:var(--slate);padding:9px 0;border-bottom:1px solid var(--mid);display:flex;gap:10px}
+.about li:last-child{border-bottom:none}
+.about li::before{content:"✓";color:var(--gold);font-weight:700}
+.link{color:#8a6d1d;font-weight:700;font-size:.9rem}
+.link:hover{text-decoration:underline}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
+.card{background:var(--white);border:1px solid var(--mid);border-radius:var(--r);padding:24px;transition:border-color .28s ease,box-shadow .28s ease}
+.card:hover{border-color:var(--gold);box-shadow:0 8px 24px rgba(13,27,42,.07)}
+.card h3{font-family:var(--font-d);font-weight:400;color:var(--navy);font-size:1.15rem;margin:10px 0 8px}
+.card p{font-size:.87rem;color:var(--muted);line-height:1.6}
+.pill{font-size:.68rem;font-weight:700;letter-spacing:.08em;padding:3px 10px;border-radius:30px;background:var(--gold-10);color:#8a6d1d;border:1px solid var(--gold-30)}
+.pill.live{background:rgba(34,197,94,.1);color:#15803d;border-color:rgba(34,197,94,.3)}
+.note{text-align:center;color:var(--muted);font-size:.82rem;font-style:italic;margin-top:18px}
+footer{background:var(--navy);color:var(--light);padding:44px 5% 24px;margin-top:24px}
+.f-in{max-width:1100px;margin:0 auto}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:28px}
+footer h3{font-family:var(--font-d);font-weight:400;color:var(--gold);font-size:1.5rem;margin-bottom:6px}
+footer p,footer li{color:var(--tm);font-size:.9rem}
+footer ul{list-style:none}
+footer li{margin-bottom:8px}
+footer a{color:rgba(244,246,249,.85)}
+footer a:hover{color:var(--gold)}
+.f-bot{border-top:1px solid rgba(255,255,255,.08);padding-top:16px;text-align:center;font-size:.78rem;color:var(--muted)}
+@media(max-width:767px){.hero{padding:40px 22px}.about{grid-template-columns:1fr;gap:20px;padding:24px}.f-grid{grid-template-columns:1fr}.top .tag{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<main class="card">
-  <p class="brand">R.A.S. Services</p>
-  <h1>Our main site is being rebuilt</h1>
-  <p>We’re updating our website from the ground up. In the meantime, you can browse our work on our portfolio site.</p>
 
-  <div class="bar" aria-hidden="true"><span id="fill"></span></div>
-  <p class="count" id="count" aria-live="polite">Redirecting you to our portfolio in 8 seconds…</p>
+<header class="top">
+  <img src="https://portfolio.rasservices.co.za/LOGO.png" alt="R.A.S. Services" onerror="this.style.display='none'">
+  <span class="tag">Research · Academic · Support | Polokwane, Limpopo</span>
+</header>
 
-  <div class="actions">
-    <a class="btn" href="https://portfolio.rasservices.co.za/">Go to portfolio now</a>
-    <button class="btn alt" id="stay" type="button">Stay on this page</button>
+<main class="wrap">
+
+  <div class="hero">
+    <span class="eyebrow">SITE UPDATE IN PROGRESS</span>
+    <h1>Our main site is being rebuilt</h1>
+    <p class="lead">We’re rebuilding our website from the ground up. Everything you need, including our services, pricing and past work, is on our portfolio site in the meantime.</p>
+    <div class="bar" aria-hidden="true"><span id="fill"></span></div>
+    <p class="count" id="count" aria-live="polite">Taking you to our portfolio in 15 seconds…</p>
+    <div class="actions">
+      <a class="btn-shine" href="https://portfolio.rasservices.co.za/">Go to portfolio now</a>
+      <button class="btn-ghost" id="stay" type="button">Stay on this page</button>
+    </div>
   </div>
 
-  <div class="contact">
-    Need something specific? Get in touch at
-    <!-- TODO: replace with your public contact address -->
-    <a href="mailto:info@rasservices.co.za">info@rasservices.co.za</a>
-  </div>
+  <section>
+    <div class="head">
+      <h2>About R.A.S. Services</h2>
+      <p>A research and academic consultancy supporting undergraduate and postgraduate students across South Africa.</p>
+    </div>
+    <div class="about">
+      <div>
+        <h3>What we do today</h3>
+        <p>We help students turn ideas, supervisor feedback and draft work into submission-ready standard, with structural guidance at every stage.</p>
+        <a class="link" href="https://portfolio.rasservices.co.za/">See services and case studies →</a>
+      </div>
+      <ul>
+        <li>Research framework consulting and structural guidance</li>
+        <li>Academic editing and submission-readiness reviews</li>
+        <li>Data analysis: quantitative, qualitative and mixed methods</li>
+        <li>Consultation and academic mentorship</li>
+        <li>Tertiary and bursary application support</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <h2>What’s coming</h2>
+      <p>We’re growing, and the rebuilt site will grow with us. These are planned, so details may change.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><span class="pill">COMING SOON</span><h3>Referral services</h3><p>A referral programme connecting students, partners and organisations with the right support.</p></div>
+      <div class="card"><span class="pill">COMING SOON</span><h3>Team expansion</h3><p>We’ll be hiring as we grow. Opportunities will be announced here and on our social channels.</p></div>
+      <div class="card"><span class="pill live">AVAILABLE NOW</span><h3>Mentorship</h3><p>Academic and business mentorship today, with more structured programmes on the way.</p></div>
+      <div class="card"><span class="pill">COMING SOON</span><h3>Tutoring</h3><p>Subject and research-skills tutoring as a new service line.</p></div>
+      <div class="card"><span class="pill">COMING SOON</span><h3>Private services</h3><p>Tailored private engagements for individuals and organisations.</p></div>
+    </div>
+    <p class="note">Planned services are announcements of intent, not offers. Pricing and availability will be confirmed at launch.</p>
+  </section>
+
 </main>
+
+<footer>
+  <div class="f-in">
+    <div class="f-grid">
+      <div>
+        <h3>R.A.S. Services</h3>
+        <p>Research · Academic · Support<br>Polokwane, Limpopo<br>Mon–Fri, 08H30–16H00</p>
+      </div>
+      <ul>
+        <li><a href="https://portfolio.rasservices.co.za/">portfolio.rasservices.co.za</a></li>
+        <li><a href="mailto:info@rasservices.co.za">info@rasservices.co.za</a></li>
+        <li><a href="https://facebook.com/rasservices.za" target="_blank" rel="noopener">Facebook: rasservices.za</a></li>
+      </ul>
+    </div>
+    <div class="f-bot">&copy; 2026 R.A.S. Services. POPIA compliant. NDA available on request.</div>
+  </div>
+</footer>
 
 <script>
 (function () {
   var target = "https://portfolio.rasservices.co.za/";
-  var total = 8, left = total, timer;
+  var total = 15, left = total, timer;
   var fill = document.getElementById("fill");
   var count = document.getElementById("count");
   var stay = document.getElementById("stay");
@@ -64,17 +162,16 @@ p{margin:0 0 16px;color:var(--muted)}
       count.textContent = "Redirecting…";
       window.location.replace(target);
     } else {
-      count.textContent = "Redirecting you to our portfolio in " + left + " second" + (left === 1 ? "" : "s") + "…";
+      count.textContent = "Taking you to our portfolio in " + left + " second" + (left === 1 ? "" : "s") + "…";
     }
   }
 
   timer = setInterval(tick, 1000);
-  fill.style.width = "0%";
 
   stay.addEventListener("click", function () {
     clearInterval(timer);
     fill.parentNode.style.display = "none";
-    count.textContent = "Automatic redirect cancelled.";
+    count.textContent = "Automatic redirect cancelled. Take your time.";
     stay.style.display = "none";
   });
 })();
