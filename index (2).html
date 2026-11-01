@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R.A.S. Services — Site Update in Progress</title>
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://portfolio.rasservices.co.za/">
+<noscript><meta http-equiv="refresh" content="8;url=https://portfolio.rasservices.co.za/"></noscript>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--text:#1c2330;--muted:#5b6575;--accent:#1d5fd6;--accent-text:#fff;--border:#e1e5ec;--bar:#e1e5ec}
+@media (prefers-color-scheme:dark){:root{--bg:#10141b;--card:#181e28;--text:#eef1f6;--muted:#9aa5b8;--accent:#5b9bff;--accent-text:#0b1220;--border:#2a3342;--bar:#2a3342}}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{display:flex;align-items:center;justify-content:center;padding:24px;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6}
+.card{width:100%;max-width:520px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px 32px;text-align:center}
+.brand{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 20px}
+h1{font-size:1.6rem;line-height:1.25;margin:0 0 12px}
+p{margin:0 0 16px;color:var(--muted)}
+.bar{height:6px;background:var(--bar);border-radius:3px;overflow:hidden;margin:24px 0 8px}
+.bar span{display:block;height:100%;width:0;background:var(--accent);transition:width 1s linear}
+.count{font-size:.9rem;min-height:1.4em}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-block;padding:11px 22px;border-radius:10px;font:inherit;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:var(--accent-text)}
+.btn.alt{background:transparent;color:var(--accent)}
+.contact{margin-top:28px;padding-top:20px;border-top:1px solid var(--border);font-size:.9rem}
+.contact a{color:var(--accent)}
+</style>
+</head>
+<body>
+<main class="card">
+  <p class="brand">R.A.S. Services</p>
+  <h1>Our main site is being rebuilt</h1>
+  <p>We’re updating our website from the ground up. In the meantime, you can browse our work on our portfolio site.</p>
+
+  <div class="bar" aria-hidden="true"><span id="fill"></span></div>
+  <p class="count" id="count" aria-live="polite">Redirecting you to our portfolio in 8 seconds…</p>
+
+  <div class="actions">
+    <a class="btn" href="https://portfolio.rasservices.co.za/">Go to portfolio now</a>
+    <button class="btn alt" id="stay" type="button">Stay on this page</button>
+  </div>
+
+  <div class="contact">
+    Need something specific? Get in touch at
+    <!-- TODO: replace with your public contact address -->
+    <a href="mailto:info@rasservices.co.za">info@rasservices.co.za</a>
+  </div>
+</main>
+
+<script>
+(function () {
+  var target = "https://portfolio.rasservices.co.za/";
+  var total = 8, left = total, timer;
+  var fill = document.getElementById("fill");
+  var count = document.getElementById("count");
+  var stay = document.getElementById("stay");
+
+  function tick() {
+    left--;
+    fill.style.width = ((total - left) / total * 100) + "%";
+    if (left <= 0) {
+      clearInterval(timer);
+      count.textContent = "Redirecting…";
+      window.location.replace(target);
+    } else {
+      count.textContent = "Redirecting you to our portfolio in " + left + " second" + (left === 1 ? "" : "s") + "…";
+    }
+  }
+
+  timer = setInterval(tick, 1000);
+  fill.style.width = "0%";
+
+  stay.addEventListener("click", function () {
+    clearInterval(timer);
+    fill.parentNode.style.display = "none";
+    count.textContent = "Automatic redirect cancelled.";
+    stay.style.display = "none";
+  });
+})();
+</script>
+</body>
+</html>
